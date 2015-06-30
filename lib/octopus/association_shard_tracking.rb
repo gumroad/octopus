@@ -18,7 +18,6 @@ module Octopus
         maximum
         minimum
         pluck
-        scoping
         size
         sum
         to_a

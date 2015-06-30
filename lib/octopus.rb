@@ -105,8 +105,9 @@ module Octopus
   end
 
   def self.shards=(shards)
-    config[rails_env] = HashWithIndifferentAccess.new(shards)
-    ActiveRecord::Base.connection.initialize_shards(@config)
+    raise RuntimeError.new('Sharding is disabled in this fork of octopus.')
+  #   config[rails_env] = HashWithIndifferentAccess.new(shards)
+  #   ActiveRecord::Base.connection.initialize_shards(@config)
   end
 
   def self.using(shard, &block)
